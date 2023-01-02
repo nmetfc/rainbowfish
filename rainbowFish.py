@@ -221,29 +221,33 @@ def set_to_mode(mode):
     try:
         p.terminate()
     except:
-        print("nothing")
+        pass
     calc_speed = (100-speed)/1000
     if mode == "party":
-        speed = 50
-        calc_speed = (100-speed)/1000
+        if not active_mode == mode:
+            speed = 50
+            calc_speed = (100-speed)/1000
         active_mode = "party"
         p = Process(target=party, args=(calc_speed/10,))
         p.start()
     elif mode == "rainbow_cycle":
-        speed = 95
-        calc_speed = (100-speed)/1000
+        if not active_mode == mode:
+            speed = 95
+            calc_speed = (100-speed)/1000
         active_mode = "rainbow_cycle"
         p = Process(target=rainbow_cycle, args=(calc_speed,))
         p.start()
     elif mode == "random_loop":
-        speed = 50
-        calc_speed = (100-speed)/1000
+        if not active_mode == mode:
+            speed = 50
+            calc_speed = (100-speed)/1000
         active_mode = "random_loop"
         p = Process(target=random_loop, args=(calc_speed,))
         p.start()
     elif mode == "rainbow_cycle_random":
-        speed = 95
-        calc_speed = (100-speed)/1000
+        if not active_mode == mode:
+            speed = 95
+            calc_speed = (100-speed)/1000
         active_mode = "rainbow_cycle_random"
         p = Process(target=rainbow_cycle_random, args=(calc_speed,))
         p.start()
@@ -252,8 +256,9 @@ def set_to_mode(mode):
         p = Process(target=jelly_fish_dance, args=(calc_speed,))
         p.start()
     elif mode == "jelly_fish_static":
-        speed = 100
-        calc_speed = (100-speed)/1000
+        if not active_mode == mode:
+            speed = 100
+            calc_speed = (100-speed)/1000
         active_mode = "jelly_fish_static"
         p = Process(target=jelly_fish_static, args=(calc_speed,))
         p.start()
