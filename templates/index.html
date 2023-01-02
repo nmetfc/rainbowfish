@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Rainbow Fish</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+          <img src="../static/fishy.png" width="50" height="50" class="d-inline-block align-top" alt="">
+          Rainbow Fish!
+        </a>
+        <a href="/stop" class="btn btn btn-danger">STOP</a>
+      </nav>
+      <div class = "container mt-3">
+      <div class="card-columns">
+      <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Controls</h5>
+            <form form name="myForm" method="GET" action="/set-controls">
+              <div class="form-group">
+                <p class="card-text mb-0">Brightness</p>
+                <input type="range" class="form-control-range" id="formControlRange" id="bright" name="bright" min="0" max="100" value="{{brightness}}">
+                <span id="rangeval">{{brightness}}</span>
+                <p class="card-text mt-2 mb-0">Speed</p>
+                <input type="range" class="form-control-range" id="formControlRange" id="speed" name="speed" min="0" max="100" value="{{speed}}">
+                <span id="rangeval">{{speed}}</span>
+                <p class="card-text mt-2 mb-0">Color</p>
+                <input type="color" id="color" name="color" value="{{color}}">
+              </div>
+              <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+          </div>  
+        </div>
+    </div>
+      <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Normal</h5>
+              <p class="card-text">Set your Rainbowfish to authentic mode</p>
+              <a href="/leds?mode=jelly_fish_static" class="btn btn-primary">Activate</a>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Party</h5>
+              <p class="card-text">Set your Rainbowfish to Party Mode</p>
+              <a href="/leds?mode=party" class="btn btn-primary">Activate</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+            <h5 class="card-title">Rainbow Cycle</h5>
+            <p class="card-text">Cycle through colors of the Rainbow</p>
+            <a href="/leds?mode=rainbow_cycle" class="btn btn-primary">Activate</a>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+            <h5 class="card-title">Rainbow Cycle Random</h5>
+            <p class="card-text">Cycle through colors of the Rainbow. Colors not in order.</p>
+            <a href="/leds?mode=rainbow_cycle_random" class="btn btn-primary">Activate</a>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Random Loop</h5>
+                <p class="card-text">Loop with Random colors</p>
+                <a href="/leds?mode=random_loop" class="btn btn-primary">Activate</a>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+              <h5 class="card-title">Jelly Fish Jam!</h5>
+              <p class="card-text">Complete Madness!</p>
+              <a href="/leds?mode=jelly_fish_dance" class="btn btn-primary">Activate</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 text-white bg-danger">
+            <div class="card-body">
+                <h5 class="card-title">Stop</h5>
+                <p class="card-text">Turn off Leds</p>
+                <a href="/stop" class="btn btn-primary">STOP</a>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
